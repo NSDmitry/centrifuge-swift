@@ -175,6 +175,7 @@ public class CentrifugeClient {
             strongSelf.connecting = true
             strongSelf.needReconnect = true
             var request = URLRequest(url: URL(string: strongSelf.url)!)
+            request.timeoutInterval = 20
             for (key, value) in strongSelf.config.headers {
                 request.addValue(value, forHTTPHeaderField: key)
             }
